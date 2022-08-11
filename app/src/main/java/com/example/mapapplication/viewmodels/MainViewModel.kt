@@ -15,7 +15,7 @@ class MainViewModel @Inject constructor(repo: Repository) : ViewModel() {
     private var repository = repo
     private val _resultData = MutableLiveData<ArrayList<Results>>()
 
-   suspend fun getPOIData(): MutableLiveData<ArrayList<Results>> {
+   suspend fun  getPOIData(): MutableLiveData<ArrayList<Results>> {
             val response = repository.getPOI(5, "km", 52.526, 13.415, apiKey)
             if (response.isSuccessful) {
                 _resultData.postValue(response.body())

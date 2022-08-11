@@ -31,7 +31,9 @@ object RetrofitModule {
         OkHttpClient
             .Builder()
             .addInterceptor(httpLoggingInterceptor)
-            .connectTimeout(20, TimeUnit.SECONDS)
+            .connectTimeout(60, TimeUnit.SECONDS)
+            .readTimeout(60, TimeUnit.SECONDS)
+            .writeTimeout(60, TimeUnit.SECONDS)
             .build()
 
     @Singleton
